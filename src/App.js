@@ -1,23 +1,285 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CustomTableComponent from "./customTableComponent/CustomTableComponent";
+
+const data = [
+  {
+    name: "Alice Johnson",
+    Date: "12 August 2024",
+    Number: "7890XXXXX",
+    Aadhar_No: "456789123654",
+    Amount: "₹5,000 Cr",
+    id: 1,
+  },
+  {
+    name: "Bob Brown",
+    Date: "25 September 2024",
+    Number: "2345XXXXX",
+    Aadhar_No: "987123654789",
+    Amount: "₹4,300 Dr",
+    id: 2,
+  },
+  {
+    name: "Carol Wilson",
+    Date: "5 July 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "321456987654",
+    Amount: "₹9,200 Cr",
+    id: 3,
+  },
+  {
+    name: "David Lee",
+    Date: "19 October 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "789654321456",
+    Amount: "₹7,800 Dr",
+    id: 4,
+  },
+  {
+    name: "Emma Taylor",
+    Date: "14 November 2024",
+    Number: "6789XXXXX",
+    Aadhar_No: "456123789654",
+    Amount: "₹5,600 Cr",
+    id: 5,
+  },
+  {
+    name: "Frank White",
+    Date: "8 December 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹3,900 Dr",
+    id: 6,
+  },
+  {
+    name: "Grace Martinez",
+    Date: "2 January 2024",
+    Number: "2341XXXXX",
+    Aadhar_No: "654987321456",
+    Amount: "₹6,100 Cr",
+    id: 7,
+  },
+  {
+    name: "Henry Clark",
+    Date: "17 February 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "321987654123",
+    Amount: "₹4,400 Dr",
+    id: 8,
+  },
+  {
+    name: "Ivy Garcia",
+    Date: "23 March 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "789654123987",
+    Amount: "₹8,700 Cr",
+    id: 9,
+  },
+  {
+    name: "Jack Anderson",
+    Date: "9 April 2024",
+    Number: "9876XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹2,500 Dr",
+    id: 10,
+  },
+  {
+    name: "Kate Rodriguez",
+    Date: "30 May 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹5,300 Cr",
+    id: 11,
+  },
+  {
+    name: "Leo Thompson",
+    Date: "11 June 2024",
+    Number: "2345XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹7,400 Dr",
+    id: 12,
+  },
+  {
+    name: "Mia Harris",
+    Date: "7 July 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "789654321987",
+    Amount: "₹3,200 Cr",
+    id: 13,
+  },
+  {
+    name: "Noah Martinez",
+    Date: "18 August 2024",
+    Number: "7890XXXXX",
+    Aadhar_No: "456123789654",
+    Amount: "₹9,600 Dr",
+    id: 14,
+  },
+  {
+    name: "Olivia Scott",
+    Date: "5 September 2024",
+    Number: "2341XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹4,700 Cr",
+    id: 15,
+  },
+  {
+    name: "Peter Wright",
+    Date: "12 October 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹6,800 Dr",
+    id: 16,
+  },
+  {
+    name: "Quinn Hall",
+    Date: "25 November 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹3,500 Cr",
+    id: 17,
+  },
+  {
+    name: "Rachel Baker",
+    Date: "30 December 2024",
+    Number: "9876XXXXX",
+    Aadhar_No: "789654321987",
+    Amount: "₹8,200 Dr",
+    id: 18,
+  },
+  {
+    name: "Samuel Young",
+    Date: "14 January 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹5,900 Cr",
+    id: 19,
+  },
+  {
+    name: "Tina Evans",
+    Date: "9 February 2024",
+    Number: "2345XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹7,000 Dr",
+    id: 20,
+  },
+  {
+    name: "Ursula King",
+    Date: "5 March 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹4,100 Cr",
+    id: 21,
+  },
+  {
+    name: "Victor Moore",
+    Date: "18 April 2024",
+    Number: "7890XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹9,400 Dr",
+    id: 22,
+  },
+  {
+    name: "Wendy Phillips",
+    Date: "1 May 2024",
+    Number: "2341XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹2,800 Cr",
+    id: 23,
+  },
+  {
+    name: "Xavier Turner",
+    Date: "23 June 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹6,300 Dr",
+    id: 24,
+  },
+  {
+    name: "Yvonne Adams",
+    Date: "7 July 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹5,200 Cr",
+    id: 25,
+  },
+  {
+    name: "Zack Parker",
+    Date: "19 August 2024",
+    Number: "9876XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹7,700 Dr",
+    id: 26,
+  },
+  {
+    name: "Amelia Wright",
+    Date: "3 September 2024",
+    Number: "5432XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹4,600 Cr",
+    id: 27,
+  },
+  {
+    name: "Benjamin Hill",
+    Date: "12 October 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "987654321987",
+    Amount: "₹8,100 Dr",
+    id: 28,
+  },
+  {
+    name: "Claire Nelson",
+    Date: "25 November 2024",
+    Number: "2345XXXXX",
+    Aadhar_No: "654321987654",
+    Amount: "₹3,300 Cr",
+    id: 29,
+  },
+  {
+    name: "Daniel Allen",
+    Date: "18 December 2024",
+    Number: "8765XXXXX",
+    Aadhar_No: "321987654321",
+    Amount: "₹9,200 Dr",
+    id: 30,
+  },
+];
+
+const columns = [
+  { id: 1, name: "name", label: "Name" },
+  { id: 2, name: "Date", label: "Date" },
+  { id: 3, name: "Number", label: "Number" },
+  { id: 4, name: "Amount", label: "Amount" },
+  { id: 6, name: "labourCharge", label: "Labour Charge" },
+  { id: 7, name: "paymentMode", label: "Payment Mode" },
+  { id: 8, name: "paymentType", label: "Type" },
+  { id: 9, name: "customerType", label: "Customer Type" },
+  { id: 10, name: "signature", label: "Signature" },
+  { id: 11, name: "referenceName", label: "Reference Name" },
+  { id: 12, name: "description", label: "Description" },
+  { id: 13, name: "selectedItem", label: "seletedItem" },
+  { id: 14, name: "buyItem", label: "Buy Item" },
+  { id: 15, name: "status", label: "Status" },
+  { id: 16, name: "pendingDueDate", label: "Pending Due Date" },
+  { id: 17, name: "debtPayment", label: "Debt payment (Udhar)" },
+  { id: 18, name: "amountPaid", label: "AmountPaid" },
+  { id: 19, name: "interestType", label: "Interest Type" },
+  { id: 20, name: "interestPercentage", label: "Interest Percentage" },
+  { id: 21, name: "startDate", label: "StartDate" },
+  { id: 22, name: "debtDueDate", label: "Debt Due Date" },
+  { id: 23, name: "Aadhar_No", label: "Aadhar No" },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CustomTableComponent
+        title="Account Management"
+        data={data}
+        columns={columns}
+        search={true}
+        dateFilter={true}
+        download={true}
+      />
     </div>
   );
 }
